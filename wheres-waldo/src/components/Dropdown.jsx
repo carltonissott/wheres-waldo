@@ -22,24 +22,28 @@ const Dropdown = (props) => {
 
   return (
     <>
-      <div className="click-circle" style={position}/>
-      <div style={position} className="dropdown">
-        {!foundCharacters.includes("waldo") && (
-          <button value={"waldo"} onClick={buttonHandler}>
-            Waldo
-          </button>
-        )}
-        {!foundCharacters.includes("odlaw") && (
-          <button value={"odlaw"} onClick={buttonHandler}>
-            Odlaw
-          </button>
-        )}
-        {!foundCharacters.includes("wizard") && (
-          <button value={"wizard"} onClick={buttonHandler}>
-            Wizard Whitebeard
-          </button>
-        )}
-      </div>
+      {!gameFinished && (
+        <div>
+          <div className="click-circle" style={position} />
+          <div style={position} className="dropdown">
+            {!foundCharacters.includes("waldo") && (
+              <button value={"waldo"} onClick={buttonHandler}>
+                Waldo
+              </button>
+            )}
+            {!foundCharacters.includes("odlaw") && (
+              <button value={"odlaw"} onClick={buttonHandler}>
+                Odlaw
+              </button>
+            )}
+            {!foundCharacters.includes("wizard") && (
+              <button value={"wizard"} onClick={buttonHandler}>
+                Wizard Whitebeard
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </>
   );
 };

@@ -50,11 +50,11 @@ const GameFinish = (props) => {
     <div className="modal">
       <div className="modal-center">
         <div className="scores">
-          <h3>Top Scores:</h3>
+          <h3>Top 5 Scores:</h3>
           {isLoading && <img src={loading} alt="loading..." />}
           {!isLoading && (
             <ol>
-              {loadedScores.map((score) => {
+              {loadedScores.slice(0,5).map((score) => {
                 return (
                   <li key={score.id}>
                     {score.name} <b>{score.time} second</b>
